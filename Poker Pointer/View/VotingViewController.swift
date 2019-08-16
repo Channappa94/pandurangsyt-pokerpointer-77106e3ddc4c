@@ -34,9 +34,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//    }
+
 
     @IBOutlet weak var NavigationTitle: UINavigationItem!
     

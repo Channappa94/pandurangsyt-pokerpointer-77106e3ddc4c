@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4913317223070A1E003510DF /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4913317123070A1E003510DF /* video.mov */; };
 		491363CF222C3881004B4D52 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363CE222C3881004B4D52 /* Session.swift */; };
 		491363D1222DE4CC004B4D52 /* SessionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363D0222DE4CC004B4D52 /* SessionInfoViewController.swift */; };
 		491363D322308B6F004B4D52 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363D222308B6F004B4D52 /* VotingViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3450BFDD6DEB510624EDA67F /* Pods-Poker Pointer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poker Pointer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer.debug.xcconfig"; sourceTree = "<group>"; };
+		4913317123070A1E003510DF /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		491363CE222C3881004B4D52 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		491363D0222DE4CC004B4D52 /* SessionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoViewController.swift; sourceTree = "<group>"; };
 		491363D222308B6F004B4D52 /* VotingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		49FDC996222C34EE0038D991 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4913317123070A1E003510DF /* video.mov */,
 				FB20888A22279A480026A15F /* ViewController.swift */,
 				49FDC999222C35490038D991 /* PointCollectionViewCell.swift */,
 				49FDC99A222C35490038D991 /* PointCollectionViewCell.xib */,
@@ -200,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4913317223070A1E003510DF /* video.mov in Resources */,
 				FB20889322279A4E0026A15F /* LaunchScreen.storyboard in Resources */,
 				49FDC9A0222C36420038D991 /* AttendeeTableViewCell.xib in Resources */,
 				49FDC99C222C35490038D991 /* PointCollectionViewCell.xib in Resources */,
@@ -427,7 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39ZJUMGGVX;
+				DEVELOPMENT_TEAM = 373573836D;
 				INFOPLIST_FILE = "Poker Pointer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,7 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 39ZJUMGGVX;
+				DEVELOPMENT_TEAM = 373573836D;
 				INFOPLIST_FILE = "Poker Pointer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

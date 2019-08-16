@@ -14,7 +14,9 @@ class SessionInfoViewController: UIViewController {
     @IBOutlet weak var sessionKeyTextField: UITextField!
     
     @IBAction func NextButtonAction(_ sender: Any) {
+        //We are checking if the textfield is empyt
         if checkFieldsNotEmpty() {
+            //If it is not empty
              s.nextButtonClicked()
         }
     }
@@ -37,7 +39,7 @@ class SessionInfoViewController: UIViewController {
             sessionKeyTextField.isHidden = s.isModerator()
         }
     }
-    
+   //Putting an alert controller in case if the text field is empty is is going to give user alert
     func checkFieldsNotEmpty()->Bool{
         if displayNameTextField.text == ""{
             let alert = UIAlertController(title: "Error", message: "Display name cannot be empty", preferredStyle: .alert)
@@ -45,6 +47,7 @@ class SessionInfoViewController: UIViewController {
             self.present(alert, animated: true)
             return false
         }else if sessionKeyTextField.text == "" && !s.isModerator(){
+            //Same applies if the otehr field is empty or no
             let alert = UIAlertController(title: "Error", message: "Session Key cannot be empty", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true)
