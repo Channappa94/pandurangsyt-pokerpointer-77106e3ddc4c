@@ -6,6 +6,7 @@ target 'Poker Pointer' do
   use_frameworks!
 
   # Pods for Poker Pointer
-  pod 'Firebase/Core'
-
+pod 'Firebase/Analytics'
+pod 'Firebase/Database'
+pod 'Firebase/Auth'
 end

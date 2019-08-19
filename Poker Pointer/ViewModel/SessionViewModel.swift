@@ -20,9 +20,7 @@ class SessionViewModel {
     func joinSessionButtonClicked(){
         s.setIsModerator(isModerator: false)
     }
-    func nextButtonClicked(){
-        
-    }
+    
     //Generating a random key so that the value will be gerneated between one to three
     func generateRandomKey() -> String {
         let letters = "0123456789"

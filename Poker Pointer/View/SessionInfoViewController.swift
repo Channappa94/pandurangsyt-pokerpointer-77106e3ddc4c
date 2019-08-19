@@ -7,39 +7,53 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class SessionInfoViewController: UIViewController {
+    //*****Firebase
+    var userKey: String?
+    var scrumKey: String?
+    var ref: DatabaseReference!
+    var sendingValue = [String]()
     @IBOutlet weak var displayNameTextField: UITextField!
     @IBOutlet weak var sessionKeyLabel: UILabel!
     @IBOutlet weak var sessionKeyTextField: UITextField!
     
+    @IBOutlet weak var email: UITextField!
     @IBAction func NextButtonAction(_ sender: Any) {
         //We are checking if the textfield is empyt
         if checkFieldsNotEmpty() {
             //If it is not empty
-             s.nextButtonClicked()
+            wrtieToFirebase()
+            fetchDataFromFirebase()
+
         }
+ 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         readyPage()
+ 
     }
     
     func readyPage(){
         if s.isModerator(){
             sessionKeyTextField.isHidden = s.isModerator()
             sessionKeyLabel.isHidden = !s.isModerator()
-            let key = s.generateRandomKey()
+            key = s.generateRandomKey()
             sessionKeyLabel.text = key
-            s.setSessionKey(key: Int(key)!)
+            s.setSessionKey(key: Int(key!)!)
         }else{
+            userKey = sessionKeyTextField.text
             sessionKeyLabel.isHidden = !s.isModerator()
             sessionKeyTextField.isHidden = s.isModerator()
         }
     }
-   //Putting an alert controller in case if the text field is empty is is going to give user alert
+    
+    //Putting an alert controller in case if the text field is empty is is going to give user alert
     func checkFieldsNotEmpty()->Bool{
         if displayNameTextField.text == ""{
             let alert = UIAlertController(title: "Error", message: "Display name cannot be empty", preferredStyle: .alert)
@@ -55,14 +69,22 @@ class SessionInfoViewController: UIViewController {
         }
         return true
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+ 
+    func wrtieToFirebase(){
+        let user = displayNameTextField.text
+        //Writing the data inside the firebase
+        ref = Database.database().reference().child("\(key!)")
+        ref.childByAutoId().child("name").setValue(user)
     }
-    */
+    
+    
+    func fetchDataFromFirebase(){
+//        ref = Database.database().reference()
+//        ref.child("\(key)").observeSingleEvent(of: .value, with: {(snapshot) in
+//            print(snapshot.key)
+//            key = snapshot.key
+//        })
+    }
+
 
 }

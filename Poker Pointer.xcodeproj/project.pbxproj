@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4912855E2309F788001EB32F /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912855D2309F788001EB32F /* JoinViewController.swift */; };
 		4913317223070A1E003510DF /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4913317123070A1E003510DF /* video.mov */; };
+		4913317723076242003510DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4913317623076242003510DF /* GoogleService-Info.plist */; };
+		4913317B2307BE56003510DF /* joinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4913317A2307BE56003510DF /* joinTableViewCell.swift */; };
 		491363CF222C3881004B4D52 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363CE222C3881004B4D52 /* Session.swift */; };
 		491363D1222DE4CC004B4D52 /* SessionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363D0222DE4CC004B4D52 /* SessionInfoViewController.swift */; };
 		491363D322308B6F004B4D52 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491363D222308B6F004B4D52 /* VotingViewController.swift */; };
@@ -22,12 +25,15 @@
 		FB20888E22279A480026A15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB20888C22279A480026A15F /* Main.storyboard */; };
 		FB20889022279A4E0026A15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB20888F22279A4E0026A15F /* Assets.xcassets */; };
 		FB20889322279A4E0026A15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB20889122279A4E0026A15F /* LaunchScreen.storyboard */; };
-		FB2088DB2228901E0026A15F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB2088DA2228901E0026A15F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3450BFDD6DEB510624EDA67F /* Pods-Poker Pointer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poker Pointer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer.debug.xcconfig"; sourceTree = "<group>"; };
+		4912855D2309F788001EB32F /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		4913317123070A1E003510DF /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
+		4913317623076242003510DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4913317A2307BE56003510DF /* joinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinTableViewCell.swift; sourceTree = "<group>"; };
+		4913317C2308A176003510DF /* Poker Pointer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Poker Pointer.entitlements"; sourceTree = "<group>"; };
 		491363CE222C3881004B4D52 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		491363D0222DE4CC004B4D52 /* SessionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInfoViewController.swift; sourceTree = "<group>"; };
 		491363D222308B6F004B4D52 /* VotingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +51,6 @@
 		FB20888F22279A4E0026A15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB20889222279A4E0026A15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB20889422279A4E0026A15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB2088DA2228901E0026A15F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,8 @@
 				4913317123070A1E003510DF /* video.mov */,
 				FB20888A22279A480026A15F /* ViewController.swift */,
 				49FDC999222C35490038D991 /* PointCollectionViewCell.swift */,
+				4912855D2309F788001EB32F /* JoinViewController.swift */,
+				4913317A2307BE56003510DF /* joinTableViewCell.swift */,
 				49FDC99A222C35490038D991 /* PointCollectionViewCell.xib */,
 				49FDC99D222C36420038D991 /* AttendeeTableViewCell.swift */,
 				49FDC99E222C36420038D991 /* AttendeeTableViewCell.xib */,
@@ -129,15 +136,16 @@
 		FB20888722279A470026A15F /* Poker Pointer */ = {
 			isa = PBXGroup;
 			children = (
+				4913317C2308A176003510DF /* Poker Pointer.entitlements */,
 				FB20888822279A480026A15F /* AppDelegate.swift */,
 				FB20888C22279A480026A15F /* Main.storyboard */,
 				FB20888F22279A4E0026A15F /* Assets.xcassets */,
 				FB20889122279A4E0026A15F /* LaunchScreen.storyboard */,
 				FB20889422279A4E0026A15F /* Info.plist */,
+				4913317623076242003510DF /* GoogleService-Info.plist */,
 				4937B9A2222F1E470005411F /* ViewModel */,
 				49FDC997222C35140038D991 /* Model */,
 				49FDC996222C34EE0038D991 /* View */,
-				FB2088DA2228901E0026A15F /* GoogleService-Info.plist */,
 			);
 			path = "Poker Pointer";
 			sourceTree = "<group>";
@@ -154,7 +162,6 @@
 				FB20888222279A470026A15F /* Frameworks */,
 				FB20888322279A470026A15F /* Resources */,
 				37AD6E844C816B4D2A56EC4D /* [CP] Embed Pods Frameworks */,
-				41537CFBDA5AB96082E340A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,6 +184,11 @@
 				TargetAttributes = {
 					FB20888422279A470026A15F = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -207,9 +219,9 @@
 				FB20889322279A4E0026A15F /* LaunchScreen.storyboard in Resources */,
 				49FDC9A0222C36420038D991 /* AttendeeTableViewCell.xib in Resources */,
 				49FDC99C222C35490038D991 /* PointCollectionViewCell.xib in Resources */,
-				FB2088DB2228901E0026A15F /* GoogleService-Info.plist in Resources */,
 				FB20889022279A4E0026A15F /* Assets.xcassets in Resources */,
 				FB20888E22279A480026A15F /* Main.storyboard in Resources */,
+				4913317723076242003510DF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,33 +234,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41537CFBDA5AB96082E340A8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Poker Pointer/Pods-Poker Pointer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FB9B55764AED121D5DC479D /* [CP] Check Pods Manifest.lock */ = {
@@ -279,10 +280,12 @@
 				491363CF222C3881004B4D52 /* Session.swift in Sources */,
 				FB20888B22279A480026A15F /* ViewController.swift in Sources */,
 				49FDC99B222C35490038D991 /* PointCollectionViewCell.swift in Sources */,
+				4913317B2307BE56003510DF /* joinTableViewCell.swift in Sources */,
 				491363D322308B6F004B4D52 /* VotingViewController.swift in Sources */,
 				491363D1222DE4CC004B4D52 /* SessionInfoViewController.swift in Sources */,
 				4937B9A4222F1E650005411F /* SessionViewModel.swift in Sources */,
 				FB20888922279A480026A15F /* AppDelegate.swift in Sources */,
+				4912855E2309F788001EB32F /* JoinViewController.swift in Sources */,
 				49FDC99F222C36420038D991 /* AttendeeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +433,7 @@
 			baseConfigurationReference = 3450BFDD6DEB510624EDA67F /* Pods-Poker Pointer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Poker Pointer/Poker Pointer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 373573836D;
 				INFOPLIST_FILE = "Poker Pointer/Info.plist";
@@ -449,6 +453,7 @@
 			baseConfigurationReference = 99FFD600BDBB56FC226F13A0 /* Pods-Poker Pointer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Poker Pointer/Poker Pointer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 373573836D;
 				INFOPLIST_FILE = "Poker Pointer/Info.plist";

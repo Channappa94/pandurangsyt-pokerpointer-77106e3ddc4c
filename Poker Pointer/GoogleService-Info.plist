@@ -2,39 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>116716481113-1lh69et2v8tb62jtrfvrtucuf8lp6caq.apps.googleusercontent.com</string>
+	<string>850931417377-0n9pq3p4ppcm2n48e13t3cu107ife531.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.116716481113-1lh69et2v8tb62jtrfvrtucuf8lp6caq</string>
+	<string>com.googleusercontent.apps.850931417377-0n9pq3p4ppcm2n48e13t3cu107ife531</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBswxaiROM0kNCXK9K3OCSmHo7vQpQJZfM</string>
+	<string>AIzaSyBijxDRl4zTbXdIIuyXvQTaDzYKfqi5kEg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>116716481113</string>
+	<string>850931417377</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>AppsStudio.Poker-Pointer</string>
 	<key>PROJECT_ID</key>
-	<string>poker-pointer</string>
+	<string>pokerpointer-5d838</string>
 	<key>STORAGE_BUCKET</key>
-	<string>poker-pointer.appspot.com</string>
+	<string>pokerpointer-5d838.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:116716481113:ios:b14d998819ffb1bf</string>
+	<string>1:850931417377:ios:b14d998819ffb1bf</string>
 	<key>DATABASE_URL</key>
-	<string>https://poker-pointer.firebaseio.com</string>
+	<string>https://pokerpointer-5d838.firebaseio.com</string>
 </dict>
 </plist>
