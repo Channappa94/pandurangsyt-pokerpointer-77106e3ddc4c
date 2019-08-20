@@ -13,6 +13,7 @@ var key: String?
 class JoinViewController: UIViewController {
     var ref: DatabaseReference!
     var sendingValue = [String]()
+    var keyName:String = ""
     
     
     @IBOutlet weak var Name: UITextField!
@@ -26,33 +27,39 @@ class JoinViewController: UIViewController {
     }
     
     @IBAction func checking(_ sender: Any) {
-        let names = keys.text
-        ref = Database.database().reference().child("Student")
-        // ref.child("names")
-        ref.observe(.value){(snapshot: DataSnapshot) in
-            for nameValue in snapshot.children{
-                let snapshotContent = nameValue as? DataSnapshot
-                let namedata = snapshotContent?.value as? NSDictionary
-                self.sendingValue.append(namedata?.value(forKey: "names") as! String)
-                print(self.sendingValue)
+        keyName = keys.text!
+        //      ref = Database.database().reference().child("Student")
+        ref = Database.database().reference()
+        ref.child(String(keyName)).observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists(){
+                print("exists")
+            }else{
+                //Create alert controller here
+                let alert = UIAlertController(title: "Hello", message: "This is not the key", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Yes", style: .default, handler: nil)
+                alert.addAction(<#T##action: UIAlertAction##UIAlertAction#>)
+                print("False")
             }
-        }
-        fetch()
-        //accessing value=
-        
+            
+            let nameOfUser = self.Name.text
+            
+            //Writing the data inside the firebase
+            self.ref = Database.database().reference().child(self.keyName)
+            self.ref.childByAutoId().child("name").setValue(nameOfUser)
+            
+        })
+        performSegue(withIdentifier: "fromJoining", sender: self)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    func fetch(){
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fromJoining"){
+            let controller = segue.destination as? VotingViewController
+            controller!.datafromJoin = keyName
+            
+        }
     }
+    
+    
+    
     
 }

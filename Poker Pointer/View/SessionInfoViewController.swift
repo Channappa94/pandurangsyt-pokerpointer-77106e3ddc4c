@@ -22,21 +22,14 @@ class SessionInfoViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBAction func NextButtonAction(_ sender: Any) {
-        //We are checking if the textfield is empyt
         if checkFieldsNotEmpty() {
-            //If it is not empty
             wrtieToFirebase()
-            fetchDataFromFirebase()
-
         }
- 
+        performSegue(withIdentifier: "toVotingView", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         readyPage()
- 
     }
     
     func readyPage(){
@@ -46,6 +39,7 @@ class SessionInfoViewController: UIViewController {
             key = s.generateRandomKey()
             sessionKeyLabel.text = key
             s.setSessionKey(key: Int(key!)!)
+            
         }else{
             userKey = sessionKeyTextField.text
             sessionKeyLabel.isHidden = !s.isModerator()
@@ -69,22 +63,23 @@ class SessionInfoViewController: UIViewController {
         }
         return true
     }
- 
+    
     func wrtieToFirebase(){
         let user = displayNameTextField.text
         //Writing the data inside the firebase
-        ref = Database.database().reference().child("\(key!)")
+        ref = Database.database().reference().child(key!)
         ref.childByAutoId().child("name").setValue(user)
     }
     
-    
-    func fetchDataFromFirebase(){
-//        ref = Database.database().reference()
-//        ref.child("\(key)").observeSingleEvent(of: .value, with: {(snapshot) in
-//            print(snapshot.key)
-//            key = snapshot.key
-//        })
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toVotingView"){
+            let controller = segue.destination as? VotingViewController
+            controller!.datafromSession = key!
+            
+        }
     }
-
-
+    
+    
+    
+    
 }

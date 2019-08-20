@@ -81,7 +81,7 @@
                                 </state>
                                 <connections>
                                     <action selector="NextButtonAction:" destination="mmy-FG-RfD" eventType="touchUpInside" id="dnF-pQ-LPa"/>
-                                    <segue destination="5QL-sD-jiS" kind="popoverPresentation" popoverAnchorView="G39-LA-ova" id="tz5-sn-zmg">
+                                    <segue destination="5QL-sD-jiS" kind="popoverPresentation" identifier="toVotingView" popoverAnchorView="G39-LA-ova" id="tz5-sn-zmg">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -142,10 +142,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTb-gh-Put">
-                                                    <rect key="frame" x="257" y="0.0" width="137" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTb-gh-Put">
+                                                    <rect key="frame" x="297" y="0.0" width="97" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dun-w5-GVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757.971014492754" y="25.446428571428569"/>
+            <point key="canvasLocation" x="2766.666666666667" y="39.508928571428569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qOj-g6-Lru">
@@ -262,7 +262,9 @@
                                 </state>
                                 <connections>
                                     <action selector="checking:" destination="rad-Sy-UZi" eventType="touchUpInside" id="CH9-kQ-bJY"/>
-                                    <segue destination="5QL-sD-jiS" kind="show" id="uWo-na-8nf"/>
+                                    <segue destination="5QL-sD-jiS" kind="popoverPresentation" identifier="fromJoining" popoverAnchorView="JwT-RD-ajw" id="uWo-na-8nf">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KeD-q1-dIX">

@@ -13,6 +13,9 @@ import FirebaseAuth
 
 class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     var name: [String] = []
+    var datafromSession:String = ""
+    var datafromJoin:String = ""
+
     
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
@@ -33,6 +36,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? joinTableViewCell
+        print(datafromSession)
         cell?.leftLabel?.text = sendingValue[indexPath.row]
         DispatchQueue.main.async {
             if self.name.isEmpty{
@@ -52,6 +56,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PointCell", for: indexPath) as! PointCollectionViewCell
         cell.PointImageview.image = pointImages[indexPath.row]
+        print(pointImages)
         return cell
     }
     
@@ -59,6 +64,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchDataFromFirebase()
         setTitle()
         connectTableView()
@@ -81,21 +87,18 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //select that cell which the row is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         name = [array[indexPath.row]]
+        print(name)
+        ref = Database.database().reference().child(key!)
+        ref.childByAutoId().child("key").setValue(name)
         tableView.reloadData()
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     func fetchDataFromFirebase(){
         //accessing value=
-        ref = Database.database().reference().child("\(key)")
+        if datafromSession.isEmpty !=  true{
+            ref = Database.database().reference().child(datafromSession)
+        }else{
+            ref = Database.database().reference().child(datafromJoin)
+        }
         // ref.child("names")
         ref.observe(.value){(snapshot: DataSnapshot) in
             self.sendingValue.removeAll()
@@ -108,4 +111,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     @IBOutlet weak var labelText: UILabel!
+    
+    
+    
 }
