@@ -11,6 +11,9 @@ import Firebase
 import FirebaseDatabase
 
 class SessionInfoViewController: UIViewController {
+    
+    var dataforkey:String = ""
+    
     //*****Firebase
     var userKey: String?
     var scrumKey: String?
@@ -67,8 +70,16 @@ class SessionInfoViewController: UIViewController {
     func wrtieToFirebase(){
         let user = displayNameTextField.text
         //Writing the data inside the firebase
-        ref = Database.database().reference().child(key!)
-        ref.childByAutoId().child("name").setValue(user)
+        ref = Database.database().reference(withPath: "6003")
+        let query = ref.queryOrdered(byChild: "name")
+        print(query)
+        
+        
+        
+        
+        //        ref.childByAutoId().child("name").setValue(user)
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

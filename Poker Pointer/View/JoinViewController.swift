@@ -28,28 +28,28 @@ class JoinViewController: UIViewController {
     
     @IBAction func checking(_ sender: Any) {
         keyName = keys.text!
-        //      ref = Database.database().reference().child("Student")
+        //This line will help to search in the database and updates if the user is only found.
         ref = Database.database().reference()
         ref.child(String(keyName)).observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists(){
+                let nameOfUser = self.Name.text
+                
+                //Writing the data inside the firebase
+                self.ref = Database.database().reference().child(self.keyName)
+                self.ref.childByAutoId().child("name").setValue(nameOfUser)
                 print("exists")
             }else{
                 //Create alert controller here
                 let alert = UIAlertController(title: "Hello", message: "This is not the key", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Yes", style: .default, handler: nil)
-                alert.addAction(<#T##action: UIAlertAction##UIAlertAction#>)
-                print("False")
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+                print("Error")
             }
-            
-            let nameOfUser = self.Name.text
-            
-            //Writing the data inside the firebase
-            self.ref = Database.database().reference().child(self.keyName)
-            self.ref.childByAutoId().child("name").setValue(nameOfUser)
-            
         })
         performSegue(withIdentifier: "fromJoining", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "fromJoining"){

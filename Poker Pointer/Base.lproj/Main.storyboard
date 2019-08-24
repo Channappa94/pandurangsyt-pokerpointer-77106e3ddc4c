@@ -174,7 +174,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <navigationItem title="Title" id="Edt-c2-NAs"/>
+                                    <navigationItem title="Title" id="Edt-c2-NAs">
+                                        <barButtonItem key="leftBarButtonItem" title="Reveal" id="dAo-Tw-Pei">
+                                            <color key="tintColor" red="0.78876134382944163" green="0.028128987394151882" blue="0.027004015575125963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="revealKeys:" destination="5QL-sD-jiS" id="YNy-EH-NIN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-3N-wSM">
@@ -211,6 +218,7 @@
                         <outlet property="VotingCollectionViewOutlet" destination="dCh-3N-wSM" id="wv8-nn-298"/>
                         <outlet property="VotingTableViewOutlet" destination="eXv-B7-Cm3" id="lGD-Vs-KPi"/>
                         <outlet property="tableView" destination="eXv-B7-Cm3" id="jue-20-GeN"/>
+                        <segue destination="mmy-FG-RfD" kind="show" identifier="keyPassing" id="FPz-kv-TEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dun-w5-GVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,6 +297,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uWo-na-8nf"/>
+        <segue reference="tz5-sn-zmg"/>
+        <segue reference="FPz-kv-TEW"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,7 +15,7 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var name: [String] = []
     var datafromSession:String = ""
     var datafromJoin:String = ""
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     var ref: DatabaseReference!
@@ -42,16 +42,20 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if self.name.isEmpty{
                 print("nil")
             }else{
-                cell?.rightLabel?.text = self.name[indexPath.row]
+              cell?.rightLabel?.text = self.name[indexPath.row]
                 tableView.reloadData()
             }
         }
         return cell!
     }
     
+    
+ 
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pointImages.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PointCell", for: indexPath) as! PointCollectionViewCell
@@ -60,16 +64,17 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    @IBOutlet weak var NavigationTitle: UINavigationItem!
     
+    @IBOutlet weak var NavigationTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         fetchDataFromFirebase()
         setTitle()
         connectTableView()
         connectCollectionView()
-        // Do any additional setup after loading the view.
     }
     
     func connectTableView(){
@@ -84,14 +89,78 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NavigationTitle.title = String(s.getSessionKey())
     }
     
+    
     //select that cell which the row is selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         name = [array[indexPath.row]]
-        print(name)
-        ref = Database.database().reference().child(key!)
-        ref.childByAutoId().child("key").setValue(name)
         tableView.reloadData()
+
+        print(name)
+//        ref = Database.database().reference(withPath: "6003")
+//    
+//        let query = ref.queryOrdered(byChild: "name").queryEqual(toValue: "yours").observeSingleEvent(of: DataEventType.value) { (snapshot) in
+//            if snapshot.exists() {
+//                print("exists")
+//                
+//                
+//            }
+//            else {
+//                print("doesn't exist")
+        
+        
+        
+        
+        
+        
+//        ref.child(String(keyName)).observeSingleEvent(of: .value, with: {(snapshot) in
+//            if snapshot.exists()
+        
+   
+
+
+//        DatabaseReference retrieve =
+//            ref.child("type").child("Whatsapp").child("Shopping deals");
+//        retrieve.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for(DataSnapshot getdata : dataSnapshot.getChildren()){
+//                    if (getdata.child("category").exists()) {
+//                        Toast.makeText(this,"Stop it exists!!!",Toast.LENGTH_SHORT).show();
+//
+//                    }}else{
+//
+//                }
+//            }
+//        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        let currentUserId = self.uid
+//        let refUsers = ref.child("6003")
+//        let refUser = refUsers.child(currentUserId)
+//        let refUserChatIds = refUser.child("name")
+        
+//        let userRef = ref.child("6003")
+//        let queryRef = userRef.queryOrdered(byChild: "name")
+//        self.ref = Database.database().reference().child("yes")
+//        self.ref.childByAutoId().child("name").setValue("blah")
+//        print(queryRef)
+//        queryRef.observeSingleEvent(of: .value, with: {(snapshot) in
+//            for snap in snapshot.children {
+//                let userSnap = snap as! DataSnapshot
+//                let uid = userSnap.key
+//                print("key = \(uid)")
+//            }
+//        })
     }
+ 
     func fetchDataFromFirebase(){
         //accessing value=
         if datafromSession.isEmpty !=  true{
@@ -111,6 +180,13 @@ class VotingViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     @IBOutlet weak var labelText: UILabel!
+    
+    
+    //When the maste presses the button reveal, it will show all the keys.
+    @IBAction func revealKeys(_ sender: Any) {
+        //Fetching when the button is pressed.
+        
+    }
     
     
     
