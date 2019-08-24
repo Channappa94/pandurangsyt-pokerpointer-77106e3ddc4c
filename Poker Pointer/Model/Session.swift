@@ -5,16 +5,19 @@
 //  Created by IMCS2 on 3/3/19.
 //  Copyright © 2019 123 Apps Studio LLC. All rights reserved.
 //
+//This class will help to get all the variable declartion and to get the definition
 
 import Foundation
 
 class Session{
+    //Declaring of the varibale
     private var sessionKey: Int
     private var displayName: String
     private var selectedPoint: Int?
     private var isModerator: Bool
     
     init(){
+        //Initializing the varibale to some value
         sessionKey = 0
         displayName = ""
         selectedPoint = 0
